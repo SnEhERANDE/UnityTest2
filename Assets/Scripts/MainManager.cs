@@ -13,6 +13,7 @@ public class MainManager : MonoBehaviour
     public Text ScoreText;
     public GameObject GameOverText;
     
+    
     private bool m_Started = false;
     private int m_Points;
     
@@ -70,7 +71,9 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
+        MainDataManager.Instance.CheckHighScore(m_Points);
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
+
 }
